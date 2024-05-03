@@ -1,13 +1,11 @@
 #! /usr/bin/sh -l
 
+apk add --no-cache libstdc++ coreutils curl bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash 
 . /root/.profile
-echo "*** Now investigating /github/workspace... ***"
-ls /github/workspace
-echo "*** Now attempting copy to workspace folder... ***"
+nvm install --lts
+nvm use --lts
+apk del coreutils curl bash
 cp -R /docs/* /github/workspace
-echo "*** Now re-investigating /github/workspace... ***"
-ls /github/workspace
-echo "*** Now moving into workspace folder... ***"
 cd /github/workspace
-echo "*** Now attempting mkdocs build... ***"
 mkdocs build
