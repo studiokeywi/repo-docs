@@ -13,5 +13,6 @@ RUN        pip install mkdocs-typedoc \
   &&       . ~/.profile \
   &&       nvm install --lts \
   &&       nvm use --lts \
-  &&       apk del coreutils curl bash 
-ENTRYPOINT [ "/bin/sh", "-cl", "action.sh"]
+  &&       apk del coreutils curl bash \
+  &&       chmod +x /action.sh
+ENTRYPOINT [ "/bin/sh", "-cl", "/action.sh"]
