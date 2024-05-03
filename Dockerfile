@@ -13,4 +13,4 @@ RUN        pip install mkdocs-typedoc \
   &&       nvm install --lts \
   &&       nvm use --lts \
   &&       apk del coreutils curl bash 
-ENTRYPOINT [ "/bin/sh", "-cl", "mkdocs build"]
+ENTRYPOINT [ "/bin/sh", "-cl", "mkdocs gh-deploy"]
