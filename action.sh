@@ -1,11 +1,25 @@
 #! /usr/bin/sh -l
 
-# echo "ls /"
-# ls /
-echo "ls /github/workspace"
+echo " /
+Now investigating /github/workspace... /
+"
+
 ls /github/workspace
-# echo "cd /docs"
+
+echo " /
+Now attempting copy to workspace folder... /
+"
+
 cp -R /docs/* /github/workspace
+
+echo " /
+Now moving into workspace folder... /
+"
+
 cd /github/workspace
-# echo "mkdocs build"
+
+echo " /
+Now attempting mkdocs build... /
+"
+
 mkdocs build
