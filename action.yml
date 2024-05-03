@@ -3,4 +3,3 @@ description: 'Wrapper for MkDocs Material with mkdocs-typedoc installed and stud
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args: ['mkdocs gh-deploy']
