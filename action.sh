@@ -1,5 +1,6 @@
 #! /usr/bin/sh -l
 
+. ~/.profile
 echo "*** Now investigating /github/workspace... ***"
 ls /github/workspace
 echo "*** Now attempting copy to workspace folder... ***"
