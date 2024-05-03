@@ -8,4 +8,5 @@ nvm use --lts
 apk del coreutils curl bash
 cp -R /docs/* /github/workspace
 cd /github/workspace
+npm i
 mkdocs build

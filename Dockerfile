@@ -5,12 +5,5 @@ WORKDIR    /root
 COPY       ./.profile ./
 WORKDIR    /docs
 COPY       ./action.sh ./mkdocs.root.yml ./
-RUN        pip install mkdocs-typedoc \
-  &&       apk add --no-cache libstdc++ coreutils curl bash \
-  &&       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
-  &&       . ~/.profile \
-  &&       nvm install --lts \
-  &&       nvm use --lts \
-  &&       apk del coreutils curl bash \
-  &&       chmod +x ./action.sh
+RUN        pip install mkdocs-typedoc && chmod +x ./action.sh
 ENTRYPOINT cd /docs && sh ./action.sh
