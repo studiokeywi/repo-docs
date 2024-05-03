@@ -14,5 +14,6 @@ RUN        pip install mkdocs-typedoc \
   &&       nvm install --lts \
   &&       nvm use --lts \
   &&       apk del coreutils curl bash \
-  &&       chmod +x ./action.sh
+  &&       chmod +x ./action.sh \
+  &&       ls ./
 ENTRYPOINT [ "./action.sh" ]
