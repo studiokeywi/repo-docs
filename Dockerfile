@@ -6,6 +6,7 @@ COPY       ./.profile ./
 WORKDIR    /home
 COPY       ./mkdocs.root.yml ./
 WORKDIR    /docs
+COPY       ./action.sh ./
 RUN        pip install mkdocs-typedoc \
   &&       apk add --no-cache libstdc++ coreutils curl bash \
   &&       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
@@ -13,4 +14,4 @@ RUN        pip install mkdocs-typedoc \
   &&       nvm install --lts \
   &&       nvm use --lts \
   &&       apk del coreutils curl bash 
-ENTRYPOINT [ "/bin/sh", "-cl", "mkdocs gh-deploy"]
+ENTRYPOINT [ "/bin/sh", "-cl", "action.sh"]
