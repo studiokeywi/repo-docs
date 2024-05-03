@@ -1,15 +1,16 @@
 FROM       squidfunk/mkdocs-material:latest
 
+ENV        ENV="/root/.profile"
 WORKDIR    /root
-COPY       ./.profile mkdocs.yml entrypoint.sh ./
+COPY       ./mkdocs.yml ./.profile ./
 WORKDIR    /docs
-ENV        ENV=~/.profile
 
 RUN        pip install mkdocs-typedoc \
   &&       apk add --no-cache libstdc++ coreutils curl bash \
   &&       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
   &&       . ~/.profile \
   &&       nvm install --lts \
-  &&       nvm use --lts
+  &&       nvm use --lts \
+  &&       apk del coreutils curl bash 
 
-ENTRYPOINT [ "~/entrypoint.sh" ]
+ENTRYPOINT [ "/bin/sh", "-cl" ]

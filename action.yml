@@ -1,5 +1,6 @@
 name: 'studioKeywi Repo Docs'
-description: 'Wrapper for MkDocs Material with mkdocs-typedoc installed'
+description: 'Wrapper for MkDocs Material with mkdocs-typedoc installed and studioKeywi aesthetics'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args: ['mkdocs build']
