@@ -8,7 +8,11 @@ export NVM_NODEJS_ORG_MIRROR=https://unofficial-builds.nodejs.org/download/relea
 nvm_get_arch() { nvm_echo "x64-musl"; }
 nvm install --lts
 nvm use --lts
+echo "=== /docs? ==="
+ls /docs
 cp -R /docs/* /github/workspace
 cd /github/workspace
+echo "=== /github/workspace"
+ls ./
 npm i
 mkdocs build
