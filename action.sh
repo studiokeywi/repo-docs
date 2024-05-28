@@ -6,8 +6,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 export NVM_NODEJS_ORG_MIRROR=https://unofficial-builds.nodejs.org/download/release
 nvm_get_arch() { nvm_echo "x64-musl"; }
-nvm install --lts
-nvm use --lts
+nvm install 20.13.1
+nvm use 20.13.1
 echo "=== /docs? ==="
 ls /docs
 cp -R /docs/* /github/workspace
