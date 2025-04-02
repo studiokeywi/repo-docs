@@ -1,8 +1,5 @@
 #! /usr/bin/sh -l
-mkdir -p /docs/docs/assets
-cp -ru /etc/assets /docs/docs
+mkdir -p ./docs/assets
+cp -ru /etc/assets ./docs
 npm i
-pwd
-ls .
-ls "$(pwd)"
 tini -- mkdocs "${@:-"build"}"
