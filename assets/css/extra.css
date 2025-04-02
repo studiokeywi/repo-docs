@@ -1,0 +1,11 @@
+a:not(.md-footer__link, .md-nav__link, .md-source) {
+  text-decoration: underline;
+}
+
+body {
+  font-size: inherit;
+}
+
+html {
+  font-size: 175%;
+}
